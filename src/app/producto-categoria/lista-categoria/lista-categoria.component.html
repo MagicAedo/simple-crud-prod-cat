@@ -1,0 +1,9 @@
+
+<div *ngIf="categorias" class="row">
+    <div *ngFor="let categoria of categorias;let i = index" class="col-2 card mx-4 mt-4 animate__animated animate__fadeIn">
+        <div class="card-body">
+            <h5 class="card-title">{{categoria.nombreCategoria| titlecase}}</h5>
+            <p class="card-text">{{categoria.descripcionCategoria}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-6">
+        <form action="" (ngSubmit)="getProductos(thisSelect.value)">
+            <select class="form-select mt-4" id="validationCustom04" required #thisSelect>
+                <option selected disabled value="">Seleccione categoria:</option>
+                <option *ngFor="let categoria of categorias;">{{categoria.id}}. {{categoria.nombreCategoria}}</option>
+            </select>
+            <button class="btn btn-primary mt-2" type="submit">Buscar</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="productos" class="row">
+    <div *ngFor="let producto of productos;let i = index" class="col-2 card mx-4 mt-4 animate__animated animate__fadeIn">
+        <img [src]="producto.imgReferencia" class="card-img-top animate__animated animate__fadeIn" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.nombreProducto| titlecase}}</h5>
+            <p class="card-text">{{producto.descripcionProducto}}</p>
+            <h6>Stock: {{producto.stockProducto}}</h6>
+            <button (click)="deleteProducto(producto.id)" type="button" class="btn btn-outline-danger">Borrar</button>
+        </div>
+    </div>
+</div>

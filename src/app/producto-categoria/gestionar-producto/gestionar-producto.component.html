@@ -1,0 +1,29 @@
+<form class="row g-3" [formGroup]="form" (ngSubmit)="crearProducto(thisSelect.value)">
+    <div class="col-md-6">
+      <label for="validationDefault01" class="form-label">Nombre producto</label>
+      <input type="text" class="form-control" id="validationDefault01" formControlName="nombreProducto" maxlength="50" required>
+    </div>
+    <div class="col-md-6">
+      <label for="validationDefault02" class="form-label">Descripcion producto</label>
+      <input type="text" class="form-control" id="validationDefault02" formControlName="descripcionProducto" maxlength="100" required>
+    </div>
+    <div class="col-md-6">
+      <label for="validationDefault03" class="form-label">Stock</label>
+      <input type="number" class="form-control" id="validationDefault03" formControlName="stockProducto"  required min="0">
+    </div>
+    <div class="col-md-6">
+      <label for="validationDefault04" class="form-label">Categoria</label>
+      <select class="form-select" id="validationDefault04" required  #thisSelect>
+        <option selected disabled value="">Eliga una categoria</option>
+        <option *ngFor="let categoria of categorias;">{{categoria.id}} {{categoria.nombreCategoria}}</option>
+      </select>
+    </div>
+    <div class="col-md-12">
+      <label for="validationDefault05" class="form-label">URL imagen</label>
+      <input type="text" class="form-control" id="validationDefault05" required formControlName="imgReferencia">
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Crear producto</button>
+    </div>
+  </form>
+

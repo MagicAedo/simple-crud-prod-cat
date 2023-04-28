@@ -1,0 +1,14 @@
+<form class="row g-3" [formGroup]="form" (ngSubmit)="crearCategoria()">
+    <div class="col-md-6">
+      <label for="validationDefault01" class="form-label">Nombre categoria</label>
+      <input type="text" class="form-control" id="validationDefault01" formControlName="nombreCategoria" maxlength="50" required>
+    </div>
+    <div class="col-md-6">
+      <label for="validationDefault02" class="form-label">Descripcion categoria</label>
+      <input type="text" class="form-control" id="validationDefault02" formControlName="descripcionCategoria" maxlength="100" required>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Crear categoria</button>
+    </div>
+  </form>
+
